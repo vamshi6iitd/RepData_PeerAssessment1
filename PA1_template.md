@@ -17,9 +17,7 @@ activity<-read.csv("activity.csv",header = T,stringsAsFactors = F)
 *Solution:*
 
 ```r
-activity$day<-format(as.Date(activity$date),"%d")
 activity$dayofweek<-format(as.Date(activity$date),"%A")
-activity$month<-format(as.Date(activity$date),"%B")
 ```
 
 **3.What is mean total number of steps taken per day?**
@@ -113,16 +111,11 @@ summary(is.na(activity))
 ```
 
 ```
-##    steps            date          interval          day         
+##    steps            date          interval       dayofweek      
 ##  Mode :logical   Mode :logical   Mode :logical   Mode :logical  
 ##  FALSE:15264     FALSE:17568     FALSE:17568     FALSE:17568    
 ##  TRUE :2304      NA's :0         NA's :0         NA's :0        
-##  NA's :0                                                        
-##  dayofweek         month        
-##  Mode :logical   Mode :logical  
-##  FALSE:17568     FALSE:17568    
-##  NA's :0         NA's :0        
-## 
+##  NA's :0
 ```
 
 From the above summary, we can infer that there are **ONLY** 2304 rows in which value of "steps" is missing.
@@ -163,13 +156,13 @@ head(activity_repl)
 ```
 
 ```
-##       steps       date interval day dayofweek   month
-## 1 1.7169811 2012-10-01        0  01    Monday October
-## 2 0.3396226 2012-10-01        5  01    Monday October
-## 3 0.1320755 2012-10-01       10  01    Monday October
-## 4 0.1509434 2012-10-01       15  01    Monday October
-## 5 0.0754717 2012-10-01       20  01    Monday October
-## 6 2.0943396 2012-10-01       25  01    Monday October
+##       steps       date interval dayofweek
+## 1 1.7169811 2012-10-01        0    Monday
+## 2 0.3396226 2012-10-01        5    Monday
+## 3 0.1320755 2012-10-01       10    Monday
+## 4 0.1509434 2012-10-01       15    Monday
+## 5 0.0754717 2012-10-01       20    Monday
+## 6 2.0943396 2012-10-01       25    Monday
 ```
 
 ```r
@@ -177,13 +170,13 @@ head(activity)
 ```
 
 ```
-##   steps       date interval day dayofweek   month
-## 1    NA 2012-10-01        0  01    Monday October
-## 2    NA 2012-10-01        5  01    Monday October
-## 3    NA 2012-10-01       10  01    Monday October
-## 4    NA 2012-10-01       15  01    Monday October
-## 5    NA 2012-10-01       20  01    Monday October
-## 6    NA 2012-10-01       25  01    Monday October
+##   steps       date interval dayofweek
+## 1    NA 2012-10-01        0    Monday
+## 2    NA 2012-10-01        5    Monday
+## 3    NA 2012-10-01       10    Monday
+## 4    NA 2012-10-01       15    Monday
+## 5    NA 2012-10-01       20    Monday
+## 6    NA 2012-10-01       25    Monday
 ```
 
 New dataset activity_repl has been created with replaced 'steps' values as we can see from the comparision of activity repl and activity data frames.
