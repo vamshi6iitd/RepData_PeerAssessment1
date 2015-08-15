@@ -1,1 +1,3 @@
-knit2html("PA1_template.Rmd")
+$ git add .   # this finds any new and any modified files and adds them to the Git tracking database
+$ git commit -m "message"
+$ git push
